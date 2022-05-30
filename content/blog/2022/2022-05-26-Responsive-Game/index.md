@@ -1,7 +1,7 @@
 +++
 title = "High Responsive Game / 高响应性游戏"
 description = ""
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["Game development", "Rhythm Game"]

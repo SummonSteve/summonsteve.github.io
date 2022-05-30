@@ -77,7 +77,7 @@ local function _on_update(delta)
     print(string.format("Time elapsed: %s", delta)) -- call every frame
 end
 
-local on_dispose()
+local function _on_dispose()
     print("Disposed") -- when this script dispose
 end
 
