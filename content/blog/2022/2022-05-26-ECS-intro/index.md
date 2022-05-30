@@ -1,6 +1,6 @@
 +++
 title = "ECS架构初探"
-description = "Entity Components System 架构学习记录"
+description = "Entity Component System 架构学习记录"
 draft = false
 
 [taxonomies]

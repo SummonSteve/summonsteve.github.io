@@ -40,5 +40,3 @@ osu! 最开始由澳大利亚人 Dean Herbert (aka. peppy or ppy) 开发，主�
 图为 osu! 在不同难度下的判定区间
 
 可以看出其完美判定区间（300）平均值已经来到了 50ms 左右，意味着你的输入误差必须在 50ms 以内
-
-Synthesizing 0/10 solutions
