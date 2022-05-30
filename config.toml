@@ -1,0 +1,31 @@
+# The URL the site will be built for
+base_url = "https://summonsteve.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+title = "Home"
+
+theme = "float"
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+taxonomies = [
+    {name = "tags", paginate_by = 10},
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+web_fonts = "<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap'>"
+display_twitter_link = true
+twitter_account = "https://twitter.com/SummonSteve"
+
+display_telegram_link = true
+telegram_url = "https://t.me/MyAngelATRI"
+
