@@ -55,6 +55,9 @@
         </a>
       </div>
       <section class="social-links">
+        {%- if config.extra.display_github_link and config.extra.github_url -%}
+        <a href="{{ config.extra.github_url | safe }}"><img class="button" src="https://static.addtoany.com/buttons/github.svg"></a>
+        {% endif %}
         {%- if config.extra.display_twitter_link and config.extra.twitter_url -%}
           <a href="{{ config.extra.twitter_url | safe }}"><img class="button" src="https://static.addtoany.com/buttons/twitter.svg"></a>
         {% endif %}
@@ -88,7 +91,7 @@
       {% endblock copyright %}
     </div>
     <div class="float">
-      <span>Theme by <a class="link" href="https://float-theme.netlify.app/">Float</a></span>
+      <span>Powered by <a class="link" href="https://www.getzola.org/">Zola</a> | Theme by <a class="link" href="https://float-theme.netlify.app/">Float</a></span>
     </div>
   </footer>
 

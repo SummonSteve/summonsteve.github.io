@@ -23,8 +23,12 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 web_fonts = "<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap'>"
+
+display_github_link = true
+github_url = "https://github.com/SummonSteve"
+
 display_twitter_link = true
-twitter_account = "https://twitter.com/SummonSteve"
+twitter_url = "https://twitter.com/SummonSteve"
 
 display_telegram_link = true
 telegram_url = "https://t.me/MyAngelATRI"
