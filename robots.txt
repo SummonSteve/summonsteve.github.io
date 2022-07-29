@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://summonsteve.github.io/sitemap.xml
