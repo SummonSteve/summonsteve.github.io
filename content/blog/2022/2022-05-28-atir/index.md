@@ -40,43 +40,61 @@ ECS 架构 （Entity Component System）
 
 现如今各种引擎Unreal，Unity，Godot都试图为用户提供尽可能多的通用性。
 
-但付出的代价是什么呢
+GAMES 104 课程里有一段让我印象深刻，王希老师说到：
 
-越是追求通用性，就意味着接受更多妥协来兼容各种应用场景。可以说，游戏引擎越通用，在特定平台上的性能就越一般。
+“ 游戏引擎是生产力工具，游戏引擎的用户不仅仅是程序员，真正最大的用户群体是设计师和艺术家 ”
 
-而我明确我的目标为针对 2D画面延迟敏感场景。合适的应用场景包括音游等高度依赖用户反应能力的游戏。
-
-### 游戏流程
-
-游戏往往伴随着目标，为了达到目标而设定的规则集（**Rulesets**）我在这里将其称为游戏流程。考虑到开发调试、热更新等需求，用原生代码编写规则集不是好主意。大部分游戏引擎会内置另一种脚本语言用于解释需要灵活性的组件。
-
-示例
-
-```python
-
-func startup():
-    do_something()
-    pass
-
-func update():
-    update_components()
-    pass
-
-func singal_rx():
-    do_someting()
-    pass
-
-func final():
-    dispose_resources()
-    pass
-
-```
+游戏引擎本质上是一系列工具链的集合，什么游戏需要什么样的工具，更多的工具固然好，但会不会带来额外的性能开销，这是在设计时应该考虑的。
 
 
 
-### ECS
+## 项目结构
 
-Entity - Component - System
+![image-20220811025558200](E:\summonsteve.github.io\content\blog\2022\2022-05-28-atir\image-20220811025558200.png)
 
-ECS解决了OOP模式下GameObject过多造成的耦合难以维护，
+
+
+### atir
+
+程序入口模块，包含编辑器入口和游戏入口，游戏主循环在此构建
+
+### atir-assets
+
+资源管理模块，为资源分配句柄；管理各种文件格式导入导出；序列化等功能。
+
+### atir-audio
+
+音频模块，使用原生 Bass 库实现，提供 dsound, WASAPI, ASIO 多种后端
+
+### atir-ecs
+
+Entity Component System 实现，基于 hecs 封装
+
+### atir-editor
+
+编辑器实现，基于 egui；
+
+### atir-foundation
+
+基础功能组件库，常用数据结构，网络功能，事件系统等
+
+### atir-glyph
+
+提供字符、字体渲染功能
+
+### atir-imgui
+
+imgui 实现，提供便捷的 GUI 功能
+
+### atir-input
+
+输入事件库，包括键盘、鼠标、Joystick等
+
+### atir-render
+
+渲染库，基于 wgpu (WebGPU 的 Rust 实现)，提供Vulkan, Dx12, 等多种后端
+
+### atir-utils
+
+工具库，提供 logger, Profiler 等工具
 

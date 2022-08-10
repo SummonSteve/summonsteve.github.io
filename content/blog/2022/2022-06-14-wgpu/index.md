@@ -1,5 +1,5 @@
 +++
-title = "wgpu学习记录1"
+title = "wgpu学习记录 pt.1"
 description = ""
 draft = true
 
