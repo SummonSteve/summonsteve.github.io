@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATIR &#x2F; 一个学习向游戏引擎 | Home</title>
+
+  
+  
+
+  <link rel='stylesheet' href='https://unpkg.com/ress/dist/ress.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.10/mmenu.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
+
+  
+
+  
+  <!-- Primary Meta Tags -->
+  
+    
+  
+  <meta name="description" content="本文主要记录立项调研内容，决定最终方向的各种考虑
+该项目旨在学习，完善过程中可能会出现巨大结构变动或者风格差异
+需求
+多线程
+可视化 Editor
+ECS 架构 （Entity Component S…">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="ATIR &#x2F; 一个学习向游戏引擎 | Home">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://summonsteve.github.io/blog/2022/atir/">
+  
+    <meta property="og:image" content="https://summonsteve.github.io/blog/2022/atir/IMG_20220528_221059.jpg">
+  
+  <meta property="article:published_time" content="2022-05-28">
+  <meta property="article:modified_time" content="2022-05-28">
+  <meta property="article:section" content="blog">
+  
+    <meta property="article:tag" content="Game development">
+  
+    <meta property="article:tag" content="Rhythm Game">
+  
+    <meta property="article:tag" content="Game Engine">
+  
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@xxx">
+  <meta name="twitter:creator" content="@xxx">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body-block">
+  
+  <main class="content-block">
+    <aside class="content-aside">
+      
+    <h1 class="title">
+    <a href="/">Home</a>
+  </h1>
+
+      <div class="menuanchor">
+        <a href="#nav-block">
+          <svg class="bi-list" viewBox="0 0 16 16" fill="currentColor">
+            <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </a>
+      </div>
+      <section class="social-links"><a href="https://github.com/SummonSteve"><img class="button" src="https://static.addtoany.com/buttons/github.svg"></a>
+        <a href="https://twitter.com/SummonSteve"><img class="button" src="https://static.addtoany.com/buttons/twitter.svg"></a>
+        <a href="https://t.me/MyAngelATRI"><img class="button" src="https://static.addtoany.com/buttons/telegram.svg"></a>
+        
+      </section>
+      <nav id="nav-block">
+        <ul id="tag-list">
+          
+          
+            <li class="item"><a href="https://summonsteve.github.io/tags/about-me/">About Me</a></li>
+          
+            <li class="item"><a href="https://summonsteve.github.io/tags/game-development/">Game development</a></li>
+          
+            <li class="item"><a href="https://summonsteve.github.io/tags/game-engine/">Game Engine</a></li>
+          
+            <li class="item"><a href="https://summonsteve.github.io/tags/rhythm-game/">Rhythm Game</a></li>
+          
+        </ul>
+      </nav>
+    </aside>
+    
+  
+
+  <article class="content-article">
+    <aside class="article-meta">
+      <time>2022-05-28</time>
+      <br>
+      <span>#Game development #Rhythm Game #Game Engine </span>
+    </aside>
+    <main class="article-content">
+      <h1 class="heading">
+        ATIR &#x2F; 一个学习向游戏引擎
+      </h1>
+      <p class="description">
+        
+      </p>
+      <p>本文主要记录立项调研内容，决定最终方向的各种考虑</p>
+<p>该项目旨在学习，完善过程中可能会出现巨大结构变动或者风格差异</p>
+<h2 id="xu-qiu">需求</h2>
+<p>多线程</p>
+<p>可视化 Editor</p>
+<p>ECS 架构 （Entity Component System）</p>
+<h2 id="da-gang">大纲</h2>
+<p><img src="ATIR.png" alt="ATIR Draft" />
+图中只展示了部分系统，实际复杂度可能远不止此，仅做讲解设计思路参考</p>
+<p>（注，第三方内容并不是实际技术选型，只是为了展示该层宏观定位）</p>
+<p>首先我会问自己游戏引擎是什么以及我想要什么。</p>
+<p>游戏引擎提供一个提供一系列工具、核心框架，使开发人员无需重复构建基础设施，甚至忽略平台差异进行高效的制作。</p>
+<p>在曾经，游戏和引擎的划分界线往往非常模糊。
+早期受限于硬件性能以及兼容性，引擎通常只满足游戏设计最低限度的功能实现。那时的引擎不能算是通用引擎。</p>
+<p>现如今各种引擎Unreal，Unity，Godot都试图为用户提供尽可能多的通用性。</p>
+<p>GAMES 104 课程里有一段让我印象深刻，王希老师说到：</p>
+<p>“ 游戏引擎是生产力工具，游戏引擎的用户不仅仅是程序员，真正最大的用户群体是设计师和艺术家 ”</p>
+<p>游戏引擎本质上是一系列工具链的集合，什么游戏需要什么样的工具，更多的工具固然好，但会不会带来额外的性能开销，这是在设计时应该考虑的。</p>
+<h2 id="xiang-mu-jie-gou">项目结构</h2>
+<p><img src="image-20220811025558200.png" alt="image-20220811025558200" /></p>
+<h3 id="atir">atir</h3>
+<p>程序入口模块，包含编辑器入口和游戏入口，游戏主循环在此构建</p>
+<h3 id="atir-assets">atir-assets</h3>
+<p>资源管理模块，为资源分配句柄；管理各种文件格式导入导出；序列化等功能。</p>
+<h3 id="atir-audio">atir-audio</h3>
+<p>音频模块，使用原生 Bass 库实现，提供 dsound, WASAPI, ASIO 多种后端</p>
+<h3 id="atir-ecs">atir-ecs</h3>
+<p>Entity Component System 实现，基于 hecs 封装</p>
+<h3 id="atir-editor">atir-editor</h3>
+<p>编辑器实现，基于 egui；</p>
+<h3 id="atir-foundation">atir-foundation</h3>
+<p>基础功能组件库，常用数据结构，网络功能，事件系统等</p>
+<h3 id="atir-glyph">atir-glyph</h3>
+<p>提供字符、字体渲染功能</p>
+<h3 id="atir-imgui">atir-imgui</h3>
+<p>imgui 实现，提供便捷的 GUI 功能</p>
+<h3 id="atir-input">atir-input</h3>
+<p>输入事件库，包括键盘、鼠标、Joystick等</p>
+<h3 id="atir-render">atir-render</h3>
+<p>渲染库，基于 wgpu (WebGPU 的 Rust 实现)，提供Vulkan, Dx12, 等多种后端</p>
+<h3 id="atir-utils">atir-utils</h3>
+<p>工具库，提供 logger, Profiler 等工具</p>
+
+    </main>
+    <section class="article-action-block">
+      
+      
+    </section>
+    <br>
+    
+  </article>
+
+  </main>
+
+  <footer class="footer-container">
+    <section class="social-links"><a href="https://twitter.com/SummonSteve"><img class="button" src="https://static.addtoany.com/buttons/twitter.svg"></a>
+      
+    </section>
+    <div class="copyright">
+      
+      
+    </div>
+    <div class="float">
+      <span>Powered by <a class="link" href="https://www.getzola.org/">Zola</a> | Theme by <a class="link" href="https://float-theme.netlify.app/">Float</a></span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.10/mmenu.min.js"></script>
+  <script>
+    Mmenu.configs.offCanvas.page.nodetype = "main";
+    Mmenu.configs.offCanvas.page.selector = ".content-block";
+    Mmenu.configs.offCanvas.clone = true;
+    document.addEventListener(
+        "DOMContentLoaded", () => {
+            new Mmenu( "#nav-block", {
+              extensions: [
+                "pagedim-black",
+                "position-bottom",
+                "theme-dark",
+                "border-none",
+              ],
+              keyboardNavigation: {
+                "enable": true,
+                "enhance": true,
+              },
+              "setSelected": {
+                  "hover": true
+               },
+               "autoHeight": true
+            });
+        }
+    );
+  </script>
+  <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</body>
+
+</html>
