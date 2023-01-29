@@ -24,12 +24,7 @@
       {% endblock ad1 %}
     </div>
     {% set main_section = config.extra.main_section %}
-    {%- if lang == config.default_language %}
-      {% set section = get_section(path=main_section ~ "/_index.md") %}
-    {%- else %}
-      {% set path = main_section ~ "/_index." ~ lang ~ ".md" %}
-      {% set section = get_section(path=path) %}
-    {% endif %}
+    {% set section = get_section(path=main_section ~ "/_index.md") %}
     {% for post in section.pages | slice(end=6) %}
       {{ macros::article_block(post=post) }}
     {% endfor %}

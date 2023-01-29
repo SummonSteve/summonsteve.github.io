@@ -13,3 +13,8 @@ link = ""
 
 +++
 
+|             | **Current**                                                  | Future                                                       |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| work        | Building a game engine with Rust                             | Continue the ATRILive project                                |
+| info        | Blog here -> [atir-engine](https://summonsteve.github.io/blog/2022/atir/) | repo here -> [ATRILive](https://github.com/SummonSteve/ATRILive) |
+| description | Rust game engine                                             | Livestream Scene toolkit                                     |

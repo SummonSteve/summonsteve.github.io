@@ -8,7 +8,6 @@
         <a href="{{ link | safe }}"  class="link">
             {% if post.extra.feature_image is matching("[.](jpg|jpeg|png|gif)$") %}
                 {% set post_relative_path_array = post.relative_path | split(pat="/")  %}
-                {%- if lang == config.default_language %}
                     {% set feature_image = post_relative_path_array[0] ~ "/" ~ post_relative_path_array[1] ~ "/" ~ post_relative_path_array[2] ~ "/" ~ post.extra.feature_image %}
                     {% set feature_image_300 = resize_image(path=feature_image, width=300, height=150, format="webp") %}
                     {% set feature_image_600 = resize_image(path=feature_image, width=600, height=300, format="webp") %}
@@ -17,10 +16,6 @@
                     {% set feature_image_1500 = resize_image(path=feature_image, width=1500, height=750, format="webp") %}
                     {% set feature_image_1800 = resize_image(path=feature_image, width=1800, height=900, format="webp") %}
                     {% set feature_image_2100 = resize_image(path=feature_image, width=2100, height=1050, format="webp") %}
-                
-                {% else %}
-                    {% set feature_image = post.components[1] ~ "/" ~ post.year ~ "/" ~ post.date ~ "-" ~ post.title ~ "/" ~ post.extra.feature_image %}
-                {% endif %}
                 <img class="image" loading="lazy" alt="{{ post.title }}"
                 srcset="{{ feature_image_300.url | safe }} 300w,
                         {{ feature_image_600.url | safe }} 600w,

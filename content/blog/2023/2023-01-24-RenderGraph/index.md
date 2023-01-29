@@ -1,5 +1,5 @@
 +++
-title = "Node Graph Structure"
+title = "RenderGraph"
 description = ""
 draft = true
 
@@ -7,8 +7,8 @@ draft = true
 tags = ["Game development", "Game Engine"]
 
 [extra]
-feature_image = "logo.png"
+feature_image = ""
 feature = true
 link = "" 
-+++
 
++++
