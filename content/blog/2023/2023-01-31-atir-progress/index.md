@@ -32,7 +32,9 @@ Lazer 于 2017 年立项开始设计，ppy 的目标是跨平台，可扩展，�
 
 
 [^1]: ppy曾经迫于反作弊系统舆论压力于2016年公开过一次stable代码，我们现在维护的版本是基于2016 fork改动并基本追上latest
+
 [^2]: 400fps 意味着 2.5ms 的帧生成时间加上2.5ms的update时间，考虑到高难度图的缩圈速度和判断区间，这不是一个小数字
+
 [^3]:  osu-stable 使用的 .net framework 以及 osu-lazer 使用的 .net core 可能会由于过高的帧率出现 GC choke 造成掉帧，此现象 .net core可能更严重，这也是为什么 lazer 没有提供无限制帧率
 
 ## So
