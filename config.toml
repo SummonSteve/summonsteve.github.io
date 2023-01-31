@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://summonsteve.github.io"
+base_url = "blog.atrias.moe"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -14,7 +14,7 @@ lang = "en"
 build_search_index = true
 
 taxonomies = [
-    {name = "tags", paginate_by = 10},
+  {name = "tags", paginate_by = 10},
 ]
 
 [markdown]
@@ -34,4 +34,3 @@ twitter_url = "https://twitter.com/SummonSteve"
 
 display_telegram_link = true
 telegram_url = "https://t.me/MyAngelATRI"
-
