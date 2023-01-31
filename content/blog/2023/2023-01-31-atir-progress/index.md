@@ -1,13 +1,13 @@
 +++
 title = "atir Progress Report"
 description = ""
-draft = true
+draft = false
 
 [taxonomies]
 tags = ["Game development", "Game Engine"]
 
 [extra]
-feature_image = ""
+feature_image = "screenshot026.jpg"
 feature = true
 link = "" 
 
