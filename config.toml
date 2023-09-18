@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://blog.atrias.moe"
+base_url = "https://summonsteve-github-io.pages.dev"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -30,7 +30,7 @@ display_github_link = true
 github_url = "https://github.com/SummonSteve"
 
 display_twitter_link = true
-twitter_url = "https://twitter.com/SummonSteve"
+twitter_url = "https://twitter.com/AlexeSummon"
 
 display_telegram_link = true
 telegram_url = "https://t.me/MyAngelATRI"
