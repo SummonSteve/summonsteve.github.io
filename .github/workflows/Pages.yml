@@ -12,8 +12,8 @@ jobs:
           submodules: 'true'
 
       - name: 'Build and Deploy'
-        run: git config --global --add safe.directory /github/workspace
         uses: shalzz/zola-deploy-action@v0.15.3
+        run: git config --global --add safe.directory /github/workspace
         env:
           PAGES_BRANCH: gh-pages
           TOKEN: ${{ secrets.TOKEN }}
