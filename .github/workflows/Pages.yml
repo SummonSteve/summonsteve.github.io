@@ -10,12 +10,12 @@ jobs:
         run: git config --global --add safe.directory $GITHUB_WORKSPACE
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'true'
-          
+
       - name: 'Build and Deploy'
-        uses: shalzz/zola-deploy-action@v0.15.3
+        uses: shalzz/zola-deploy-action@v0.21.0
         env:
           PAGES_BRANCH: gh-pages
           TOKEN: ${{ secrets.TOKEN }}
