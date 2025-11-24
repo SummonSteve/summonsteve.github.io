@@ -1,7 +1,7 @@
 +++
 title = "About me / 关于我"
 description = "I have ideas and dream"
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["About Me"]
